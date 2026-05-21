@@ -1,47 +1,54 @@
 import { useState } from 'react'
+import Input from "./Input.jsx";
+import ButtonCreate from "./ButtonCreate.jsx";
+import PropTypes from "prop-types";
+import Title from "./Title.jsx";
 
-function CreateTasks({onAddTaskSubmition}){
+function CreateTasks({onAddTaskSubmission}){
     const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+    const [content, setContent] = useState("");
     return(
         <div className="bg-slate-200 p-3 rounded-md">
             <div>
-                <h1 className="text-6xl text-gray-500 text-center mb-3 font-bold">
+                <Title>
                     Criar Tasks
-                </h1>
+                </Title>
             </div>
             <div className="flex flex-col gap-2 justify-center">
-                <input 
-                type="text" 
-                className="w-full text-gray-500 bg-amber-50 rounded-md p-1" 
+                <Input
+                type="text"
                 placeholder="Digite o titulo de sua task:"
                 value={title}
                 onChange={(event => setTitle(event.target.value))}
                 />
-                <input 
+                <Input
                 type="text" 
                 className="w-full text-gray-500 bg-amber-50 rounded-md p-1" 
                 placeholder="Digite o conteudo de sua task:" 
-                value={description}
-                onChange={(event => setDescription(event.target.value))}
+                value={content}
+                onChange={(event => setContent(event.target.value))}
                 />
                 <div className="flex justify-center">
-                    <button 
+                    <ButtonCreate
                     onClick={() => {
-                        if (!title.trim() || !description.trim()){
-                            return alert("Insira um titulo ou descrição para a task!!!")
+                        if (!title.trim() || !content.trim()){
+                            return alert("Insira um título ou descrição para a task!!!")
                         }
-                        onAddTaskSubmition(title, description);
+                        onAddTaskSubmission(title, content);
                         setTitle("");
-                        setDescription("");
+                        setContent("");
                     }}
-                    className="h-7 w-full bg-gray-500 text-amber-50 rounded-md hover:bg-gray-600 cursor-pointer text-center font-medium">
+                    >
                         criar
-                    </button>
+                    </ButtonCreate>
                 </div>
             </div>
         </div>
     )
+}
+
+CreateTasks.propTypes = {
+    onAddTaskSubmission: PropTypes.func.isRequired,
 }
 
 export default CreateTasks
