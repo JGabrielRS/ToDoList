@@ -8,6 +8,7 @@ function CreateAccount(){
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const API_URL = "https://camper-unstopped-bust.ngrok-free.dev";
 
     function onUserCreated(){
         navigate(`/`);
@@ -16,7 +17,7 @@ function CreateAccount(){
     async function createAccount(name, login, password){
         try {
             await fetch(
-                "http://localhost:8080/users",
+                `${API_URL}/users`,
                 {
                     method: "POST",
                     headers:{"Content-Type":"application/json"},

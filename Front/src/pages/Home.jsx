@@ -5,10 +5,11 @@ import Tasks from '../componentes/Tasks'
 
 function Home() {
     const [tasks, setTasks] = useState( []);
+    const API_URL = "https://camper-unstopped-bust.ngrok-free.dev";
 
     async function onTaskClick(taskId){
         try {
-            await fetch(`http://localhost:8080/tasks`,
+            await fetch(`${API_URL}/tasks`,
                 {method:'PUT',
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify({
@@ -24,7 +25,7 @@ function Home() {
 
     async function onDeleteTaskClick(taskId){
         try {
-            await fetch(`http://localhost:8080/tasks`,
+            await fetch(`${API_URL}/tasks`,
                 {method:'DELETE',
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify({
@@ -41,7 +42,7 @@ function Home() {
     async function fetchTask(){
         const user = JSON.parse(localStorage.getItem('user'));
         try {
-            const response = await fetch(`http://localhost:8080/tasks?userId=${user.userId}`,
+            const response = await fetch(`${API_URL}/tasks?userId=${user.userId}`,
                                                 {method:'GET',}
                                                     );
             const data = await response.json();
@@ -54,7 +55,7 @@ function Home() {
     async function createTask(title, content){
         const user = JSON.parse(localStorage.getItem('user'));
         try {
-            await fetch(`http://localhost:8080/tasks`,
+            await fetch(`${API_URL}/tasks`,
                 {method:'POST',
                     headers: {"Content-Type": "application/json"},
                     body: JSON.stringify({
