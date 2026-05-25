@@ -11,7 +11,7 @@ function Home() {
         try {
             await fetch(`${API_URL}/tasks`,
                 {method:'PUT',
-                    headers: {"Content-Type": "application/json"},
+                    headers: {"Content-Type": "application/json", "ngrok-skip-browser-warning": "true"},
                     body: JSON.stringify({
                         taskId
                     })
@@ -27,7 +27,7 @@ function Home() {
         try {
             await fetch(`${API_URL}/tasks`,
                 {method:'DELETE',
-                    headers: {"Content-Type": "application/json"},
+                    headers: {"Content-Type": "application/json", "ngrok-skip-browser-warning": "true"},
                     body: JSON.stringify({
                         taskId
                     })
@@ -43,8 +43,9 @@ function Home() {
         const user = JSON.parse(localStorage.getItem('user'));
         try {
             const response = await fetch(`${API_URL}/tasks?userId=${user.userId}`,
-                                                {method:'GET',}
-                                                    );
+                                                {method:'GET',
+                                                    headers: {"ngrok-skip-browser-warning": "true"}
+                                                    });
             const data = await response.json();
             setTasks(data);
         } catch (error) {
@@ -57,7 +58,7 @@ function Home() {
         try {
             await fetch(`${API_URL}/tasks`,
                 {method:'POST',
-                    headers: {"Content-Type": "application/json"},
+                    headers: {"Content-Type": "application/json", "ngrok-skip-browser-warning": "true"},
                     body: JSON.stringify({
                         title,
                         content,

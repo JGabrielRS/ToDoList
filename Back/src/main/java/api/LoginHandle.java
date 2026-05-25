@@ -17,13 +17,25 @@ public class LoginHandle implements HttpHandler {
 
     @Override
     public void handle(HttpExchange httpExchange) throws IOException{
-        httpExchange.getResponseHeaders().set("Content-Type", "application/json");
+        httpExchange.getResponseHeaders().set(
+                "Content-Type",
+                "application/json"
+        );
 
-        httpExchange.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
+        httpExchange.getResponseHeaders().set(
+                "Access-Control-Allow-Origin",
+                "*"
+        );
 
-        httpExchange.getResponseHeaders().add("Access-Control-Allow-Headers", "*");
+        httpExchange.getResponseHeaders().set(
+                "Access-Control-Allow-Headers",
+                "Content-Type, ngrok-skip-browser-warning"
+        );
 
-        httpExchange.getResponseHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        httpExchange.getResponseHeaders().set(
+                "Access-Control-Allow-Methods",
+                "GET, POST, PUT, DELETE, OPTIONS"
+        );
 
         String method = httpExchange.getRequestMethod();
 

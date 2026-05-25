@@ -18,7 +18,7 @@ function Login(){
                 `${API_URL}/login`,
                 {
                     method: "POST",
-                    headers:{"Content-Type":"application/json"},
+                    headers:{"Content-Type":"application/json", "ngrok-skip-browser-warning": "true"},
                     body:JSON.stringify({login, password}),
                 }
             );
