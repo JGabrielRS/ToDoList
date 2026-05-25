@@ -2,13 +2,13 @@ import {useNavigate} from "react-router-dom";
 import Input from "../componentes/Input.jsx";
 import {useState} from "react";
 import ButtonCreate from "../componentes/ButtonCreate.jsx";
+import API_URL from "../services/api";
 
 function CreateAccount(){
     const [name, setName] = useState("");
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-    const API_URL = "https://camper-unstopped-bust.ngrok-free.dev";
 
     function onUserCreated(){
         navigate(`/`);

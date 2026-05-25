@@ -2,10 +2,10 @@ import {useEffect, useState} from 'react'
 import './Home.css'
 import CreateTasks from '../componentes/CreateTasks'
 import Tasks from '../componentes/Tasks'
+import API_URL from "../services/api";
 
 function Home() {
     const [tasks, setTasks] = useState( []);
-    const API_URL = "https://camper-unstopped-bust.ngrok-free.dev";
 
     async function onTaskClick(taskId){
         try {
