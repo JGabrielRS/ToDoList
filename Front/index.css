@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/*noinspection CssInvalidAtRule*/
+@theme {
+    --color-slate-grey-50: #f0f2f4;
+    --color-slate-grey-100: #e1e5ea;
+    --color-slate-grey-200: #c4cbd4;
+    --color-slate-grey-300: #a6b0bf;
+    --color-slate-grey-400: #8996a9;
+    --color-slate-grey-500: #6b7c94;
+    --color-slate-grey-600: #566376;
+    --color-slate-grey-700: #404a59;
+    --color-slate-grey-800: #2b323b;
+    --color-slate-grey-900: #15191e;
+    --color-slate-grey-950: #0f1115;
+
+    --color-deep-crimson-50: #fbeaea;
+    --color-deep-crimson-100: #f7d4d5;
+    --color-deep-crimson-200: #efa9aa;
+    --color-deep-crimson-300: #e77e80;
+    --color-deep-crimson-400: #de5456;
+    --color-deep-crimson-500: #d6292c;
+    --color-deep-crimson-600: #ab2123;
+    --color-deep-crimson-700: #81181a;
+    --color-deep-crimson-800: #561011;
+    --color-deep-crimson-900: #2b0809;
+    --color-deep-crimson-950: #1e0606;
+
+    --color-cream-50: #f9fce9;
+    --color-cream-100: #f3f9d2;
+    --color-cream-200: #e7f3a5;
+    --color-cream-300: #dbed78;
+    --color-cream-400: #cfe74b;
+    --color-cream-500: #c3e01f;
+    --color-cream-600: #9cb418;
+    --color-cream-700: #758712;
+    --color-cream-800: #4e5a0c;
+    --color-cream-900: #272d06;
+    --color-cream-950: #1b1f04;
+
+    --color-dry-sage-50: #f4f5f0;
+    --color-dry-sage-100: #e8ebe0;
+    --color-dry-sage-200: #d1d6c2;
+    --color-dry-sage-300: #bbc2a3;
+    --color-dry-sage-400: #a4ad85;
+    --color-dry-sage-500: #8d9966;
+    --color-dry-sage-600: #717a52;
+    --color-dry-sage-700: #555c3d;
+    --color-dry-sage-800: #383d29;
+    --color-dry-sage-900: #1c1f14;
+    --color-dry-sage-950: #14150e;
+}
