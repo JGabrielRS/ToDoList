@@ -72,7 +72,7 @@ function TaskPage(){
                             </p>
                         </div>
                         <p >
-                            {task?.checked ? `${task.checked_date.day}/${
+                            {task?.checked ? `${task.checked_date.date.day}/${
                             task.checked_date.date.month}/${
                             task.checked_date.date.year} ,
                             ${task.checked_date.time.hour}:${task.checked_date.time.minute}` : ""}
