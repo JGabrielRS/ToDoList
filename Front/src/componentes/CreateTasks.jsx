@@ -8,22 +8,23 @@ function CreateTasks({createTask}) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     return(
-        <div className="bg-slate-200 p-3 rounded-md">
+        <div className="flex flex-col gap-3">
             <div>
-                <Title>
-                    Create Tasks
-                </Title>
+                <h3 className="font-inter text-xl text-left text-center font-bold">
+                    NEW TASK
+                </h3>
             </div>
-            <div className="flex flex-col gap-2 justify-center">
+            <div className="flex flex-col gap-2 justify-center mb-4">
                 <Input
+                class="font-inter bg-white hover:bg-gray-50 border-b-1 border-black/20 p-2 text-gray-150 mb-4"
                 type="text"
                 placeholder="Enter the task title:"
                 value={title}
                 onChange={(event => setTitle(event.target.value))}
                 />
                 <Input
-                type="text" 
-                className="w-full text-gray-500 bg-amber-50 rounded-md p-1" 
+                class="font-inter bg-white hover:bg-gray-50 border-b-1 border-black/20 p-2 text-gray-150 mb-4"
+                type="text"
                 placeholder="Enter the task description:"
                 value={content}
                 onChange={(event => setContent(event.target.value))}
@@ -39,7 +40,7 @@ function CreateTasks({createTask}) {
                         setContent("");
                     }}
                     >
-                        Create
+                        CREATE TASK
                     </ButtonCreate>
                 </div>
             </div>

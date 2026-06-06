@@ -54,11 +54,28 @@ public class TaskHandle implements HttpHandler {
         int statusCode = 405;
 
         if(method.equals("GET")){
-            String query = httpExchange.getRequestURI().getQuery();
-            int userId = Integer.parseInt(query.split("=")[1]);
-            List<Tasks> tasksFromUser = tasks.getAllById(userId);
-            response = gson.toJson(tasksFromUser);
-            statusCode = 200;
+            String path = httpExchange.getRequestURI().getPath();
+            if(path.matches("/tasks/\\d+")){
+
+                int taskId = Integer.parseInt(
+                    path.substring("/tasks/".length())
+                );
+
+                Tasks task = tasks.getById(taskId);
+                response = gson.toJson(task);
+                statusCode = 200;
+
+            } else {
+
+                String query = httpExchange.getRequestURI().getQuery();
+
+                int userId = Integer.parseInt(query.split("=")[1]);
+
+                List<Tasks> tasksFromUser = tasks.getAllById(userId);
+
+                response = gson.toJson(tasksFromUser);
+                statusCode = 200;
+            }
         } else if(method.equals("POST")){
             BufferedReader reader = new BufferedReader(new InputStreamReader(httpExchange.getRequestBody()));
 

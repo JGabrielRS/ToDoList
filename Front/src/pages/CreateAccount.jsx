@@ -31,19 +31,20 @@ function CreateAccount(){
     }
 
     return (
-        <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
+        <div className="w-screen h-screen flex justify-center p-6">
             <div className="w-[500px] space-y-4">
                 <div className="flex justify-center relative mb-4">
-                    <h1 className="text-4xl text-amber-50 text-center mb-3 font-bold">
-                        Create Account
+                    <h1 className="font-inter text-4xl text-center font-bold">
+                        CREATE ACCOUNT
                     </h1>
                 </div>
-                <div className="bg-slate-200 flex flex-col p-4 gap-y-3 rounded-md">
+                <div className="flex flex-col p-4 gap-y-3">
                     <div className="flex flex-col justify-center">
-                        <h3 className="text-xl text-left text-gray-500 text-center mb-1 font-bold">
-                            Name
+                        <h3 className="font-inter text-xl text-left text-center mb-1 font-bold">
+                            NAME
                         </h3>
                         <Input
+                            class="font-inter bg-white hover:bg-gray-50 border-b-1 border-black/20 p-2 text-gray-150 mb-4"
                             type="text"
                             placeholder="Enter your name:"
                             value={name}
@@ -51,10 +52,11 @@ function CreateAccount(){
                         />
                     </div>
                     <div className="flex flex-col justify-center">
-                        <h3 className="text-xl text-left text-gray-500 text-center mb-1 font-bold">
-                            Login
+                        <h3 className="font-inter text-xl text-left text-center mb-1 font-bold">
+                            LOGIN
                         </h3>
                         <Input
+                            class="font-inter bg-white hover:bg-gray-50 border-b-1 border-black/20 p-2 text-gray-150 mb-4"
                             type="text"
                             placeholder="Create a login:"
                             value={login}
@@ -62,10 +64,11 @@ function CreateAccount(){
                         />
                     </div>
                     <div className="flex flex-col justify-center">
-                        <h3 className="text-xl text-left text-gray-500 text-center mb-1 font-bold">
-                            Password
+                        <h3 className="font-inter text-xl text-left text-center mb-1 font-bold">
+                            PASSWORD
                         </h3>
                         <Input
+                            class="font-inter bg-white hover:bg-gray-50 border-b-1 border-black/20 p-2 text-gray-150 mb-4"
                             type="password"
                             placeholder="Create a password:"
                             value={password}
@@ -79,7 +82,7 @@ function CreateAccount(){
                             onUserCreated();
                         }}
                         >
-                            Sig in
+                        CREATE
                         </ButtonCreate>
                     </div>
                 </div>

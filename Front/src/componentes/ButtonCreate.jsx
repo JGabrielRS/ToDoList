@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function ButtonCreate(props) {
     return (
         <button
-            className="h-7 w-full bg-gray-500 text-amber-50 rounded-md hover:bg-gray-600 cursor-pointer text-center font-medium"
+            className="flex items-center justify-center font-inter h-7 w-full bg-black/90 text-white hover:bg-black/80 cursor-pointer font-medium tracking-widest p-5"
             {...props}
         >
             {props.children}

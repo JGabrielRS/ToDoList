@@ -9,23 +9,33 @@ function Tasks(props){
     const navigate = useNavigate();
 
     function onSeeDetailsClick(tasks){
-        const query = new URLSearchParams();
-        query.set("title", tasks.title);
-        query.set("content", tasks.content);
-        navigate(`/home/tasks?${query.toString()}`);
+        navigate(`/home/tasks/${tasks.id}`);
     }
 
     return (
         <div className="flex-1">
-            <ul className="space-y-4 p-5 bg-slate-200 rounded-md">
+            <div>
+                <h3 className="font-inter text-xl text-left text-center font-bold mb-2">
+                    YOUR TASKS
+                </h3>
+            </div>
+            <ul className="space-y-2">
                 {props.tasks.map((tasks) =>
-                <li key={tasks.id} className="flex gap-1">
+                <li key={tasks.id} className=" flex items-center gap-2 border-b-1 border-black/20 pt-4 pb-4">
                     <ButtonCheck
                     isfinished={tasks.checked}
                     onClick={() => props.onTaskClick(tasks.id)}
-                    >
-                        {tasks.title}
-                    </ButtonCheck>
+                    />
+                    <div className="flex-1 flex justify-between items-center">
+                        <span className={`font-inter text-center text-black ${tasks.checked ? "line-through text-black/50" : ""}`}>
+                            {tasks.title}
+                        </span>
+                        <span className="font-inter  text-sm text-center text-black/50">
+                            {`${tasks.creation_date.date.day}/${
+                                tasks.creation_date.date.month
+                            }/${tasks.creation_date.date.year}`}
+                        </span>
+                    </div>
                     <Button
                     onClick={() => onSeeDetailsClick(tasks)}
                     >
